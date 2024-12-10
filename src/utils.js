@@ -49,5 +49,10 @@ const estilos = {
   }
 };
 
+export const tipos = {
+  GLOBAL: 1,
+  GUILD: 2
+};
+
 export const getChannelName = estilos.texto[VARIANT];
 export const getVoiceChannelName = estilos.voz[VARIANT];

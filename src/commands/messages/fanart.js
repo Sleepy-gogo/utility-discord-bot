@@ -3,11 +3,15 @@ import {
   ApplicationCommandType,
   PermissionFlagsBits
 } from 'discord.js';
+import { tipos } from '../../utils.js';
+
 export default {
   data: new ContextMenuCommandBuilder()
     .setName('Mandar a Fanart')
     .setType(ApplicationCommandType.Message)
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
+  type: tipos.GUILD,
+  guild_ids: ['1231822315017474138'],
   execute: async function (interaction) {
     const images = [];
     interaction.targetMessage.attachments.forEach((attachment) => {

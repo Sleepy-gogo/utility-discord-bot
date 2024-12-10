@@ -1,10 +1,12 @@
 import { SlashCommandBuilder, ChannelType } from 'discord.js';
+import { tipos } from '../../utils.js';
 
 export default {
   data: new SlashCommandBuilder()
     .setName('separator')
     .setDescription('Creates a voicechat channel formatted as a separator')
     .setDMPermission(false),
+  type: tipos.GLOBAL,
   execute: async function (interaction) {
     await interaction.reply({
       content: 'Generating...',

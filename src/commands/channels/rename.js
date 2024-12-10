@@ -1,5 +1,5 @@
 import { SlashCommandBuilder, PermissionFlagsBits } from 'discord.js';
-import { formatText, getChannelName } from '../../utils.js';
+import { formatText, getChannelName, tipos } from '../../utils.js';
 
 export default {
   data: new SlashCommandBuilder()
@@ -18,6 +18,7 @@ export default {
         .setDescription('The emoji you want to use for the channel name.')
         .setRequired(true)
     ),
+  type: tipos.GLOBAL,
   execute: async function (interaction) {
     await interaction.reply({
       content: 'Renaming...',

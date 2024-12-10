@@ -3,7 +3,7 @@ import {
   PermissionFlagsBits,
   ChannelType
 } from 'discord.js';
-import { formatText, getChannelName } from '../../utils.js';
+import { formatText, getChannelName, tipos } from '../../utils.js';
 
 export default {
   data: new SlashCommandBuilder()
@@ -27,6 +27,7 @@ export default {
         .setDescription('The emoji of the channel you want to create.')
         .setRequired(true)
     ),
+  type: tipos.GLOBAL,
   execute: async function (interaction) {
     await interaction.reply({
       content: 'Generating...',
